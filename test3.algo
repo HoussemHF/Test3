@@ -1,0 +1,55 @@
+FONCTION dot_product (T1:tab; T2:tab; N:Integer):  Integer;
+VAR
+   P,i,j:  Integer;
+BEGIN
+   P:=0;
+   FOR i FROM 0 TO N-1 STEP 1  DO
+      FOR j FROM 0 TO N-1 STEP 1  DO
+         P := P +T1[i]*T2[j];
+      END_FOR
+   END_FOR
+   IF P=0 THEN Write ('T1 et T2 sont orthogonaux');
+       ELSE Write ('T1 et T2 ne sont pas orthogonaux');
+   END_IF
+    Retourner (P);
+END_FONCTION;
+ALGORITHM product
+VAR
+   tab =  Array[N] Of Integer;
+   V1,V2:  tab;
+   ps:= Integer;
+BEGIN
+    Write("enter V1 and V2");
+    Read (V1, V2);
+    ps:=dot_product(V1,V2);
+    Write("ps=",ps)
+END
+________________________________
+
+PROCEDURE dot_product (T1:tab, T2:tab, N:Integer, P,i,j:Integer);
+BEGIN
+   P:=0
+   FOR i FROM 0 TO N-1 STEP 1  DO
+     FOR j FROM 0 TO N-1 STEP 1  DO
+       P := P +T1[i]*T2[j];
+     END_FOR
+   END_FOR
+END_PROCEDURE;
+PROCEDURE afficher_dot_product(P:Integer);
+BEGIN
+    IF P=0 Then Write('T1 et T2 sont orthogonaux');
+      ELSE Write('T1 et T2 ne sont pas orthogonaux');
+    END_IF
+END_PROCEDURE;
+ALGORITHM product
+VAR
+   tab =  Array[N] Of Integer;
+   V1,V2:  tab;
+   ps:= Integer
+BEGIN
+   Write("enter V1 and V2");
+   Read (V1, V2);
+   dot_product(V1,V2,ps);
+   Write("ps=",ps);
+   afficher_dot_product(ps);
+END
